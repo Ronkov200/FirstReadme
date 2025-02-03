@@ -1,12 +1,11 @@
-const http = require('http');
-const hostname = 'localhost';
+const express = require('express');
+const app = express()
 const port = 3000;
 
-const server = http.createServer((req, res) => {
-    res.write('Hello world!')
-    res.end()
-});
+app.get('/', (req, res) => {
+    res.send('Hello world');
+})
 
-server.listen(port, hostname, () => {
+app.listen(port, () => {
     console.log('GOTOVO')
-});
+})
